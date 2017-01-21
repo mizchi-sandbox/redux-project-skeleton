@@ -3,7 +3,9 @@ import { connect } from "react-redux";
 import type { Connector } from "react-redux";
 import type { CounterState, Dispatcher } from "../types";
 
-const Counter = props => {
+type CounterProps = CounterState & Dispatcher;
+
+const Counter = (props: CounterProps) => {
   const { dispatch, count } = props;
   return (
     <div>
@@ -20,6 +22,6 @@ const Counter = props => {
   );
 };
 
-const connector: Connector<{}, CounterState & Dispatcher> = connect(({counter}) => counter);
+const connector: Connector<{}, CounterProps> = connect(({counter}) => counter);
 
 export default connector(Counter);

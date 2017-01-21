@@ -4,6 +4,7 @@ import type { CounterState, Action } from "../types";
 const initialState: CounterState = {
   count: 0
 };
+
 const counter = (state: CounterState = initialState, action: Action): CounterState => {
   switch (action.type) {
   case "INCREMENT":
