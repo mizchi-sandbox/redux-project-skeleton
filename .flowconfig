@@ -1,9 +1,12 @@
 [ignore]
 .*/node_modules/ava/.*.flow
+./decls
 
 [include]
 
 [libs]
+./decls
 
 [options]
 module.ignore_non_literal_requires=true
+esproposal.decorators=ignore
