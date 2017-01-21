@@ -12,10 +12,11 @@
     "typecheck": "flow",
     "lint": "eslint src test",
     "lint:fix": "eslint src test --fix",
-    "test": "NODE_ENV=test ava src/**/*-spec.js",
+    "test": "NODE_ENV=test ava src/**/*.spec.js",
     "cover": "nyc --reporter=lcov --reporter=text yarn test"
   },
   "dependencies": {
+    "@mizchi/match": "^1.0.4",
     "autoprefixer": "^6.6.0",
     "ava": "^0.17.0",
     "babel-core": "^6.21.0",
@@ -54,6 +55,7 @@
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "redux": "^3.6.0",
+    "redux-promise": "^0.5.3",
     "uglify-js": "^2.7.5",
     "watch": "^1.0.1",
     "webpack": "2.1.0-beta.25",

@@ -1,5 +1,6 @@
 // @flow
-import type { Store as ReduxStore, Dispatch as ReduxDispatch } from "redux";
+import type { Store as ReduxStore } from "redux";
+import type { Action } from "./action";
 
 export type CounterState = {
   count: number;
@@ -9,13 +10,10 @@ export type State = {
   counter: CounterState;
 };
 
-export type Action =
-    { type: "INCREMENT"}
-  | { type: "DECREMENT"}
-;
-
 export type Store = ReduxStore<State, Action>;
-export type Dispatch = ReduxDispatch<Action>;
+
+// Support redux-promise
+export type Dispatch = (action: Action | Promise<Action>) => Promise<Action>;
 export type Dispatcher = {
   dispatch: Dispatch;
 }
